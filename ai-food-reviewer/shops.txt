@@ -1,0 +1,3 @@
+# Used when the workflow's "shop" box is left empty. One shop per line: name, area | dishes
+Ambur Star Biryani, Anna Nagar | chicken biryani
+Murugan Idli Kadai, T Nagar | idli, vada

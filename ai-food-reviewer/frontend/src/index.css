@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  @apply bg-ink font-sans text-stone-100 antialiased;
+  background-image:
+    radial-gradient(900px 500px at 8% -10%, rgba(240, 67, 42, 0.22), transparent 60%),
+    radial-gradient(700px 420px at 100% 0%, rgba(255, 182, 39, 0.14), transparent 60%);
+  background-attachment: fixed;
+}
+
+@keyframes shimmer {
+  from { background-position: 0 0; }
+  to   { background-position: 40px 0; }
+}
+.progress-stripes {
+  background-image: linear-gradient(135deg, rgba(255,255,255,.22) 25%, transparent 25%, transparent 50%, rgba(255,255,255,.22) 50%, rgba(255,255,255,.22) 75%, transparent 75%);
+  background-size: 40px 40px;
+  animation: shimmer 0.9s linear infinite;
+}

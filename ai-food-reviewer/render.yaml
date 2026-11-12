@@ -1,0 +1,28 @@
+# Render Blueprint: one Docker web service serving the API + the built React app.
+services:
+  - type: web
+    name: ai-food-reviewer
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /api/health
+    envVars:
+      - key: GROQ_API_KEY
+        sync: false            # you paste this in the Render dashboard (free key from console.groq.com)
+      - key: LLM_MODEL
+        value: llama-3.3-70b-versatile
+      # Smaller/faster video for Render's free CPU. Raise on a paid plan.
+      - key: VIDEO_WIDTH
+        value: "540"
+      - key: VIDEO_HEIGHT
+        value: "960"
+      - key: VIDEO_FPS
+        value: "20"
+      - key: TALKING_HEAD_URL
+        sync: false            # from the Colab notebook (optional, enables realistic human)
+      - key: TALKING_HEAD_TOKEN
+        sync: false
+      - key: TALKING_HEAD_TIMEOUT
+        value: "1200"
+      - key: AI_WATERMARK
+        value: "true"

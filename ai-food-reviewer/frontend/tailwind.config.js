@@ -1,0 +1,18 @@
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: ["./index.html", "./src/**/*.{js,jsx}"],
+  theme: {
+    extend: {
+      fontFamily: {
+        sans: ['"Plus Jakarta Sans"', "system-ui", "sans-serif"],
+        display: ['"Bricolage Grotesque"', "system-ui", "sans-serif"],
+      },
+      colors: {
+        ink: "#16110f",
+        chili: "#f0432a",
+        saffron: "#ffb627",
+      },
+    },
+  },
+  plugins: [],
+};
